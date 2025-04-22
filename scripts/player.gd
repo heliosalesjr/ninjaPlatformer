@@ -24,7 +24,10 @@ func _physics_process(delta: float) -> void:
 		anchor.scale.x = sign(x_input)
 		animation_player_lower.play("run")
 		animation_player_upper.play("run")
-		
+	
+	if not is_on_floor():
+		animation_player_lower.play("jump")
+		animation_player_upper.play("jump")
 		
 	move_and_slide()
 	
